@@ -1,6 +1,6 @@
 --- 
 title: Azure CDN の特徴、トラブルシューティング手順
-date: 2020-05-11 12:30:00 
+date: 2020-07-07 17:00:00 
 tags: 
   - Network 
   - AzureCDN 
