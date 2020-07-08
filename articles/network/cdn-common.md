@@ -82,8 +82,8 @@ Azure CDN は世界中で構成された CDN の POP からサービスを提供
   "name": "contoso-cdn",
   "type": "Microsoft.Cdn/Profiles/Endpoints"
 }
-【上記の contoso-cdn をお客様のご利用されたいリソース名に置き換えてください】
 ```
+(上記の contoso-cdn をお客様のご利用されたいリソース名に置き換えてください)<br>
 <br>
 
 #### カスタムドメインを別のエンドポイントに移行したい
