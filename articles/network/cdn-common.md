@@ -77,7 +77,7 @@ Azure CDN は世界中で構成された CDN の POP からサービスを提供
 
 設定されたいエンドポイント名が利用可能かは、[REST API](https://docs.microsoft.com/en-us/rest/api/cdn/checknameavailability) によりご確認いただけます。
 
-```
+```json
 {
   "name": "contoso-cdn",
   "type": "Microsoft.Cdn/Profiles/Endpoints"
@@ -100,7 +100,7 @@ Standard Microsoft では [特定の認証局 (CA) で発行された証明書](
 Standard Verizon、Premium Verizon においては、任意の認証局 (CA) で発行された証明書が利用できますが、自己証明書は利用できず、また Azure Key Vault にアップロードいただく証明書には、認証局 (CA) の中間証明書を含めるように構成いただく必要があります。
 
 以下の openssl コマンドで、中間 CA 証明書を含んだ PFX 形式の証明書を構成いただけるのでご参照ください。
-```
+```bash
 openssl pkcs12 -export -in PublicSSLcertificate.cer -inkey PrivateKey.key -certfile IntermediateCAcertificate.cer -out PFXcertificate.pfx
  
 * PublicSSLcertificate.cer : 認証局 (CA) より発行された SSL 証明書
@@ -179,7 +179,7 @@ Azure CDN を介してコンテンツが取得できない場合は、配信元 
 Azure CDN はクライアントからの HTTPS 接続をそのまま配信元に転送するため、クライアントから配信元までの間で HTTPS 接続のための SSL 証明書の有効期限切れなどが発生した場合、エラーが応答される場合があります。<br>
 証明書の状態については、以下のopenssl コマンドを用いて確認することが可能です。
 
-```
+```bash
 [Azure CDN へのTLS 接続確認]
 openssl s_client -connect <Azure CDN のエンドポイント (xxx..azureedge.net)>:443 -servername <FQDN> -showcerts
 
