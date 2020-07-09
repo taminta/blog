@@ -107,44 +107,65 @@ Standard Microsoft SKU で構成されたエンドポイントに対して 1 つ
 
 # エラー発生時の情報採取手順
 Azure CDN では Microsoft 以外に Verizon 社と Akamai 社の CDN プラットフォームで CDN サービスを提供していることから、事象に応じて各社と連携して調査を実施する必要があります。<br>
-SKU によって情報採取の手順が一部異なりますので、弊社サポート担当にお問い合わせいただく際に、以下の手順で情報採取にご協力いただければ幸いです。<br>
-<br>
+SKU によって情報採取の手順が一部異なりますので、弊社サポート担当にお問い合わせいただく際に、以下をご確認いただき、情報採取にご協力いただければ幸いです。<br>
+<br><br>
 
 ## **Standard Microsoft** においてエラー発生時にご提供いただきたい情報
 Standard Microsoft SKU では、CDN を介した通信における HTTP ヘッダの x-azure-ref が、サポート担当が Azure 基盤のログを確認するために必要な情報となります。<br>
-そのため、エラー発生時にご提供いただきたい情報として、以下のいずれかの方法で HTTP ヘッダの x-azure-ref を取得いただき、お問合せ時にご共有いただけますと幸いです。<br>
+そのため、調査においては以下の情報に加えて、HTTP ヘッダの x-azure-ref を取得いただき、お問合せ時にご共有いただけますと幸いです。<br>
 
-* [Web プラウザにおけるネットワーク トレース (F12)](https://docs.microsoft.com/ja-jp/azure/azure-portal/capture-browser-trace) で確認する。
-* curl コマンドで確認する。<br>
+* Azure CDN が構成されている 32 桁の サブスクリプションID
+* Azure CDN のプロファイル名
+* Azure CDN のエンドポイント名
+* 事象が発生している URL (FQDN) 
+* 事象の概要
+* HTTP ヘッダの x-azure-ref の結果 (画像ではなくテキスト ベースでご共有願います)
+
+<br>
+HTTP ヘッダの x-azure-ref の取得方法は以下のいずれかでご確認いただけます。<br>
+
+* [Web プラウザにおけるネットワーク トレース (F12) の結果](https://docs.microsoft.com/ja-jp/azure/azure-portal/capture-browser-trace)
+<br>
+
+1. [Web プラウザにおけるネットワーク トレース (F12)](https://docs.microsoft.com/ja-jp/azure/azure-portal/capture-browser-trace) を取得して確認する
+2.  以下の curl コマンドで確認する。<br>
 ```bash
 curl -I  https://contoso-cdn.azureedge.net/xxx/xxx.png
 ```
 (上記の contoso-cdn を対象の FQDN に置き換えてください)
-<br>
+<br><br>
 
 ## **Standard Verizon / Premium Verizon** においてエラー発生時にご提供いただきたい情報
+Standard Verizon、Premium Verizon SKU は Verizon 社の CDN プラットフォームでサービスを提供しているため、調査は Verizon 社のエンジニアと共同で実施いたします。<br>
+調査においては、以下の情報をご共有いただけますと幸いです。<br>
+<br>
 
-_執筆中_
-
-エラー発生時にご提供いただきたい情報
-
-F12 と
-・ルール エンジン
-
-XML や右上の 5 桁の ID を教えて
-Pilice ID を共有して
-
+* Azure CDN が構成されている 32 桁の サブスクリプションID
+* Azure CDN のプロファイル名
+* Azure CDN のエンドポイント名
+* 事象が発生している URL (FQDN) 
+* 事象の概要
+* [Web プラウザにおけるネットワーク トレース (F12) の結果](https://docs.microsoft.com/ja-jp/azure/azure-portal/capture-browser-trace)
+<br><br>
 
 ## **Standard Akamai** においてエラー発生時にご提供いただきたい情報
-Akamai Standard SKU では、CDN からエラーメッセージを応答された場合に、画面上に **Reference** と呼ばれるエラー コードが記載されます。<br>
-弊サポート担当にお問い合わせいただいた際、Akamai 社と共同で調査を実施いたしますが、この「Reference」の情報があると調査が比較的早く実施できる可能性があるため、お問合せ時にご共有いただければ幸いです。<br>
-
-_画像準備_
-
+Standard Akamai SKU は Akamai 社の CDN プラットフォームでサービスを提供しているため、調査は Akamai 社のエンジニアと共同で実施いたします。<br>
+Standard Akamai SKU では、CDN からエラーメッセージを応答された場合に、画面上に **Reference** と呼ばれるエラー コードが記載されます。<br>
+この  **Reference**  のエラー コードをご共有いただくことで、ご状況について推察することも可能となるため、お問合せ時にご共有いただけますと幸いです。<br>
 <br>
-curl コマンドを利用したトラブルシューティングでは、CDN からのヘッダ情報を取得することで状況を確認いただけますが、Akamai CDN では以下のパラメーターを追加で付与いただかない限り、Akamai のヘッダが参照できません。<br>
-そのため、事象が発生した際に以下の curl コマンドの結果をお問合せ時に合わせてご共有いただけると幸いです。
+また、curl コマンドを利用したトラブルシューティングでは、CDN からの HTTP ヘッダ情報を取得することで状況を確認いただけますが、Akamai CDN では指定のパラメーターを追加で付与いただかない限り、Akamai の HTTP ヘッダが参照できません。<br>
+そのため、事象が発生した状況で、下記でご案内する curl コマンドの実行結果をお問合せ時に合わせてご共有いただけると、Akamai 社のエンジニアとスムーズに連携して調査が実施できますので、ご協力いただけますと幸いです。<br>
 <br>
+
+![参考 : Reference のエラー コード](./cdn-specific-sku/reference-error-code.png)  
+
+* Azure CDN が構成されている 32 桁の サブスクリプションID
+* Azure CDN のプロファイル名
+* Azure CDN のエンドポイント名
+* 事象が発生している URL (FQDN) 
+* 事象の概要
+* Reference のエラー コード
+* 以下の curl コマンドの実行結果
 
 ```bash
 curl -H \
@@ -152,6 +173,7 @@ curl -H \
  -IXGET https://www.contoso.com/
 ```
 (www.contoso.com の箇所は CDN にアクセスする際の URL に変えて実施ください)
+<br><br>
 
 <br>
 
