@@ -92,8 +92,80 @@ Akamai 社は世界最大規模の CDN プラットフォームで CDN サービ
 <br>
 
 # ルール エンジンの設定
+Azure CDN では 2020 年 7 月時点で Standard Microsoft SKU と Premium Verizon SKU でルール エンジンの機能を提供しています。<br>
+ルール エンジンは以下の項目においてカスタマイズが可能です。<br><br>
 
-_執筆中_
+* キャッシュ規則のカスタマイズ
+* クライアント (ユーザー) からの要求をリダイレクト
+* HTTP の要求ヘッダーや応答ヘッダーの変更
+* (Premium Verizon SKU) クライアント (ユーザー) からの要求を拒否 (403 で応答) する
+
+<br><br>
+
+### Standard Microsoft SKU　におけるルール エンジンの設定
+Stnadard Microsoft SKU のルール エンジンの設定は Azure ポータルから実施いただけます。<br>
+ルール エンジンの設定の考え方として、対象の通信を **一致条件** で指定し、対象の通信に対して実施したい **アクション** を設定することで動作します。<br>
+<br>
+設定の一例として、Azure CDN はクライアントから HTTP で接続された場合、配信元 (オリジン) に対して HTTP で接続します。<br>
+この通信経路をすべて HTTPS で暗号化されたいシナリオにおいて、[ルール エンジンを利用した HTTPS リダイレクト](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-standard-rules-engine) を設定することで、クライアントから Azure CDN を介した通信経路がすべて HTTPS となります。<br>
+この設定においては、Azure CDN のエンドポイントで受け入れプロトコルを HTTP/HTTPS としていただく点と、カスタムドメインにおいては HTTPS 有効化を構成いただく必要がある点はご留意ください。<br>
+
+<br><br>
+
+### Standard Microsoft SKU　におけるルール エンジンの設定のトラブルシューティング
+Azure CDN は世界中の POP のリソースに設定したルール エンジンを適応する動作から、反映にはおおよそ 10 分時間が掛かることが想定された動作となります。<br>
+そのため、設定直後に動作を確認いただいたとしても、反映が確認できないことがあります。<br>
+また、1 度実施いただいた設定の反映の間に何度も設定を変更し保存した場合、設定情報が意図しない状態となる可能性がある点はご留意ください。<br>
+<br>
+ルール エンジンのご利用に至っては追加の費用などは発生しないため、お客様のご要件にあった設定をお試しいただき、意図した動作にならないなどご確認されたい事項がございましたら、以下の情報をもとに弊社サポート担当までお問い合わせください。<br>
+
+* Azure CDN が構成されている 32 桁の サブスクリプションID
+* Azure CDN のプロファイル名
+* ルール エンジンを設定したエンドポイント名
+* ルール エンジンの設定名
+* 設定されたい要件の詳細
+
+<br><br>
+
+### Standard Microsoft SKU のルール エンジンに関するドキュメント
+
+* [Azure CDN の Standard ルール エンジン リファレンス](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-standard-rules-engine-reference)
+* [Azure CDN の Standard ルール エンジンの一致条件](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-standard-rules-engine-match-conditions)
+* [Azure CDN の Standard ルール エンジンでのアクション](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-standard-rules-engine-actions)
+* [Standard ルール エンジンの HTTPS リダイレクト設定](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-standard-rules-engine)
+
+<br><br>
+
+### Premium Verizon SKU におけるルール エンジンの設定
+
+執筆中
+
+----------
+Premium Verizon SKU のルール エンジンの設定は Azure ポータルからログインできる Verizon ポータルで実施いただけます。<br>
+概要としては、[こちらの公開情報](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-verizon-premium-rules-engine-reference) より確認いただけますが、ルール エンジンの設定の考え方として、対象の通信を **一致条件** で指定し、対象の通信に対して実施したい **機能** を設定することで動作します。<br>
+<br>
+Premium Verizon SKU のルール エンジンは現在 v4 とよばれるバージョンで動作しており、ルール エンジンは **ポリシー** と呼ばれる単位で管理しています。<br>
+**ポリシー** の中でルール エンジンを設定いただくと、**Draft** が構成されますので、**Draft** 
+----------
+
+<br><br>
+
+### Premium Verizon SKU におけるルール エンジンの設定のトラブルシューティング
+
+執筆中
+
+
+<br><br>
+
+### Premium Verizon SKU のルール エンジンに関するドキュメント
+
+* [Azure CDN from Verizon Premium ルール エンジンのリファレンス](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-verizon-premium-rules-engine-reference)
+* [Azure CDN from Verizon Premium ルール エンジンの条件式](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-verizon-premium-rules-engine-reference-conditional-expressions)
+* [Azure CDN from Verizon Premium ルール エンジンの一致条件](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-verizon-premium-rules-engine-reference-match-conditions)
+* [Azure CDN from Verizon Premium ルール エンジンの機能](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-verizon-premium-rules-engine-reference-features)
+* [Azure CDN from Verizon Premium ルール エンジンの HTTP 変数](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-http-variables)
+
+<br><br>
 
 # WAF の設定
 WAF の機能は 2020 年 7 月時点で Standard Microsoft においてプレビュー提供をしています。<br>
