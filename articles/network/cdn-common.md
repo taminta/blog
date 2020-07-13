@@ -108,13 +108,16 @@ CORS の設定後、意図した動作とならない場合は、一度キャッ
 [https://docs.microsoft.com/ja-jp/azure/cdn/cdn-cors](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-cors) <br>
 <br>
 
-#### 独自の証明書 (準備いただいた証明書) の利用方法
-Azure CDN で提供している 4 つの SKU のうち、独自の証明書がご利用いただけるのは Standard Microsoft と Standard Verizon、Premium Verizon となります。Standard Akamai では独自の証明書はご利用いただけません。<br>
-独自の証明書をご利用いただく際は、Azure CDN と同じサブスクリプション上に Azure Key Vault リソースを構成いただき、証明書をアップロードいただく必要があります。<br>
-Standard Microsoft では [特定の認証局 (CA) で発行された証明書](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-troubleshoot-allowed-ca) である必要があります。<br>
-Standard Verizon、Premium Verizon においては、任意の認証局 (CA) で発行された証明書が利用できますが、自己証明書は利用できず、また Azure Key Vault にアップロードいただく証明書には、認証局 (CA) の中間証明書を含めるように構成いただく必要があります。
+#### 独自の証明書を利用したカスタムドメインの HTTPS 有効化について
+カスタムドメインの HTTPS 有効化において、Azure CDN で管理された証明書 (DigiCert 社の証明書) 以外に、独自の証明書 (お客様に準備いただいた証明書) がご利用できます。<br>
+独自の証明書がご利用いただけるのは Standard Microsoft と Standard Verizon、Premium Verizon となります。<br>
+Standard Akamai では独自の証明書はご利用いただけず、Let's Encrypt の証明書で HTTPS 接続が利用できます。<br>
+独自の証明書をご利用いただく際は、Azure CDN のリソースが構成された同じサブスクリプションに Azure Key Vault リソースを構成いただき、証明書をアップロードする必要があります。
 
-以下の openssl コマンドで、中間 CA 証明書を含んだ PFX 形式の証明書を構成いただけるのでご参照ください。
+なお、Standard Microsoft では [特定の認証局 (CA) で発行された証明書](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-troubleshoot-allowed-ca) をご利用いただく必要があります。<br>
+Standard Verizon、Premium Verizon においては、任意の認証局 (CA) で発行された証明書が利用できますが、自己証明書は利用できず、また Azure Key Vault にアップロードいただく証明書には認証局 (CA) の中間証明書を含めるように構成する必要があります。
+以下の openssl コマンドで、中間 CA 証明書を含んだ PFX 形式の証明書を構成できますのでご参照ください。
+
 ```bash
 openssl pkcs12 -export -in PublicSSLcertificate.cer -inkey PrivateKey.key -certfile IntermediateCAcertificate.cer -out PFXcertificate.pfx
  
@@ -126,20 +129,31 @@ openssl pkcs12 -export -in PublicSSLcertificate.cer -inkey PrivateKey.key -certf
 <br>
 
 #### Azure CDN で利用されている IP リストが知りたい
-Azure CDN で利用されている IP リストは[公開情報](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-pop-list-api) にて公開されております。<br>
-Standard Akamai においては、公開された IP リストはありません。<br><br>
+Azure CDN で利用されている IP リストは、以下の弊社公開情報にて公開しています。<br>
+Standard Akamai においては、公開された IP リストはありません。<br>
+配信元 (オリジン) で Azure CDN からの接続を IP リストで制限されたい場合は、Standard Microsoft、Standard Verizon、Premium Verizon をご利用ください。
+
+[https://docs.microsoft.com/ja-jp/azure/cdn/cdn-pop-list-api](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-pop-list-api)<br>
+<br>
 
 #### 配信元 (オリジン) に HTTPS だけ接続するようにしたい
-Standard Microsoft と Premium Verizon で提供しているルール エンジンを利用いただくことで CDN 上で HTTPS にリダイレクトするように構成いただけます。<br>
-なお、Azure CDN のエンドポイントで HTTP を許可していない場合、HTTPS へのリダイレクトは動作しない点はご注意ください。
+Azure CDN の動作として、クライアント (ユーザー) からの要求プロトコルを用いて配信元 (オリジン) に接続する動作となります。<br>
+クライアント (ユーザー) が HTTP で要求 URL を送信した場合、Azure CDN は配信元 (オリジン) に HTTP でコンテンツを取得します。
 
-HTTPS へのリダイレクト<br>
-[https://docs.microsoft.com/ja-jp/azure/cdn/cdn-storage-custom-domain-https#http-to-https-redirection](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-storage-custom-domain-https#http-to-https-redirection)
-<br><br>
+クライアント (ユーザー) からの HTTP の要求 URL を HTTPS にリダイレクトしたい場合、Standard Microsoft と Premium Verizon で提供しているルール エンジンを利用いただく必要があります。<br>
+Standard Akamai や Standard Verizon はルール エンジンが利用できないため、HTTPS リダイレクトは構成できません。<br>
+HTTPS リダイレクトを構成する方法は、以下の弊社公開情報でご案内しておりますのでご参照ください。<br>
+なお、Azure CDN のエンドポイントの設定で、HTTP を受け入れプロトコルとして許可していない場合、HTTPS へのリダイレクトは動作しない点はご注意ください。
+
+[https://docs.microsoft.com/ja-jp/azure/cdn/cdn-storage-custom-domain-https#http-to-https-redirection](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-storage-custom-domain-https#http-to-https-redirection)<br>
+<br>
+
 #### Azure CDN で認証サービスを利用したい。
-Premium Verizon では トークン認証 の機能を提供しておりますが、それ以外の認証機能 (基本認証、クライアント認証など) は Azure CDN では提供しておりません。<br>
-配信元として Azure Storage で提供している SAS (Shared Access Signature) を用いた認証については、[公開情報](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-sas-storage-support) をご参照ください。
-<br><br>
+Premium Verizon では [トークン認証](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-token-auth) の機能を提供しておりますが、それ以外の認証機能 (基本認証、クライアント認証など) は Azure CDN では提供していません。<br>
+配信元 (オリジン) として Azure Storage をご利用されている環境では、Azure Storage の SAS (Shared Access Signature) の機能を利用し、以下の公開情報でご案内しておりますのでご参照ください。
+
+[https://docs.microsoft.com/ja-jp/azure/cdn/cdn-sas-storage-support](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-sas-storage-support) <br>
+<br>
 
 #### Azure CDN で対象の URL (コンテンツ) がキャッシュされているかを確認したい。
 Azure CDN でキャッシュがされているかを確認する方法として、Azure ポータルなどで特定のコンテンツが Azure CDN 上でキャッシュされているかどうかを確認する機能はございませんが、HTTP ヘッダの x-cache の結果で確認することができます。<br>
