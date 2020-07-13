@@ -10,9 +10,9 @@ tags:
 こんにちは、Azure テクニカル サポート チーム箕輪です。<br>
 <br>
 Azure が提供している CDN サービスの Azure CDN において、ご利用いただける機能やよくあるお問合せ、各 SKU の特徴などを踏まえたトラブル シューティングの手順などをご紹介いたします。<br>
-Azure CDN は現在 4 つの SKU があり、3 社の CDN プロバイダー (Microsoft / Verizon / Akamai) で CDN サービスを提供しております。<br>
+Azure CDN は現在 4 つの SKU があり、3 社の CDN プロバイダー (Microsoft / Verizon / Akamai) で CDN サービスを提供しています。<br>
 本ブログは Azure CDN における共通的な事項をまとめたブログとなります。<br>
-各 SKU の特徴や、各 SKU における情報採取の手順については、以下のブログでまとめておりますのでご参照ください。
+各 SKU の特徴や、各 SKU における情報採取の手順については、以下のブログでまとめていますのでご参照ください。
 
 *  [Azure CDN の各 SKU の特徴、トラブルシューティングの紹介](https://github.com/taminta/blog/blob/patch-2/articles/network/cdn-specific-sku.md)
 <!---
@@ -21,25 +21,27 @@ Azure CDN は現在 4 つの SKU があり、3 社の CDN プロバイダー (Mi
 
 <!-- more --> 
 
-本ブログでは、Azure CDN の共通的な機能として、以下の項目についてご案内しております。<br>
+本ブログでは、Azure CDN の共通的な機能として、以下の項目についてご案内しています。<br>
 
 * Azure CDN の特徴
 * Azure CDN のよくあるお問合せ
 * 構築・設定変更時のエラーのトラブルシューティング
 * 接続エラーなどが発生した際のトラブルシューティング
 
-<br><br>
+<br>
 
 # Azure CDN の特徴
-Azure CDN の特徴として、4 つの SKU でご利用いただける機能について以下の通り関連するドキュメントを記載します。
-<br>
-* ランニングコストがかからない、転送量に応じた課金体系<br>
+Azure CDN は 3 社の CDN プロバイダー (Microsoft / Verizon / Akamai)  で CDN サービスを提供しています。<br>
+各社の CDN プラットフォームによりご利用いただける機能が異なり、各 SKU の比較については [こちら](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-features) でご案内しています。<br>
+Azure CDN の 4 つの SKU で共通して利用できる機能について、弊社公開情報のリンクとあわせてご紹介します。
+
+* 固定費用がかからない、転送量に応じた課金体系<br>
 [https://azure.microsoft.com/ja-jp/pricing/details/cdn/](https://azure.microsoft.com/ja-jp/pricing/details/cdn/)
-* 任意のリソース名でプロファイルとエンドポイントが構成でき、エンドポイントは既定で HTTPS に対応<br>
+* 任意のリソース名でプロファイルとエンドポイントが構成でき、既定のエンドポイントは HTTPS に対応<br>
 [https://docs.microsoft.com/ja-jp/azure/cdn/cdn-create-new-endpoint](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-create-new-endpoint)
 * お客様に管理された任意のドメイン (カスタムドメイン) を利用可能<br>
 [https://docs.microsoft.com/ja-jp/azure/cdn/cdn-map-content-to-custom-domain](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-map-content-to-custom-domain)
-* Azure CDN で管理された無料の SSL 証明書を用いてカスタムドメインの HTTPS 接続を利用可能<br>
+* Azure CDN で管理された無料の SSL 証明書を用いたカスタムドメインの HTTPS 接続を提供<br>
 [https://docs.microsoft.com/ja-jp/azure/cdn/cdn-custom-ssl?tabs=option-1-default-enable-https-with-a-cdn-managed-certificate](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-custom-ssl?tabs=option-1-default-enable-https-with-a-cdn-managed-certificate)
 * キャッシュされたコンテンツのキャッシュ削除 (Purge)<br>
 [https://docs.microsoft.com/ja-jp/azure/cdn/cdn-purge-endpoint](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-purge-endpoint)
@@ -47,7 +49,7 @@ Azure CDN の特徴として、4 つの SKU でご利用いただける機能に
 [https://docs.microsoft.com/ja-jp/azure/cdn/cdn-caching-rules](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-caching-rules)
 * キャッシュされたコンテンツのファイル圧縮機能<br>
 [https://docs.microsoft.com/ja-jp/azure/cdn/cdn-improve-performance](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-improve-performance)
-* リクエストの数などのログ提供<br>
+* リクエストやキャッシュ ヒット数などのログ確認機能<br>
 [https://docs.microsoft.com/ja-jp/azure/cdn/cdn-azure-diagnostic-logs](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-azure-diagnostic-logs)
 * 国/地域別のアクセス制御<br>
 [https://docs.microsoft.com/ja-jp/azure/cdn/cdn-restrict-access-by-country](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-restrict-access-by-country)
