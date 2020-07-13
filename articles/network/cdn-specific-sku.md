@@ -54,7 +54,7 @@ Azure CDN の中で、2020 年 7 月時点で唯一 WAF 機能を利用できる
 <br>
 
 ## Standard / Premium Verizon 
-Standard Verizon、Premium Verizon は Verizon Degital Media 社の CDN プラットフォームを用いて CDN サービスを提供しています。<br>
+Standard Verizon、Premium Verizon は Verizon Digital Media Services 社の CDN プラットフォームを用いて CDN サービスを提供しています。<br>
 Azure ポータルから Verizon のポータルに接続することで、CDN に関わるログをグラフ化して確認することができます。<br>
 Azure Media Service において、ストリーミング エンドポイントで CDN を用いた際に既定で選択される SKU であり、メディア ストリーミングの最適化に優れています。<br>
 Premium Verizon は他の SKU と価格が異なりますが、多機能のルール エンジンや詳細なレポートなどがご利用いただけます。<br>
