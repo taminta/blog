@@ -85,7 +85,7 @@ Akamai 社は世界最大規模の CDN プラットフォームで CDN サービ
 なお、Akamai 社が提供している Akamai Control Center (旧 Luna Control Center) は Azure CDN ではご利用いただけません。<br>
 <br>
 
-* キャッシュ削除 (Purge) や設定変更の反映が迅速
+* キャッシュ消去 (Purge) や設定変更の反映が迅速
 * Let's Encrypt を用いたカスタムドメインの HTTPS 有効化
 * 動的なサイトの最適化機能<br>
 [https://docs.microsoft.com/ja-jp/azure/cdn/cdn-dynamic-site-acceleration](https://docs.microsoft.com/ja-jp/azure/cdn/cdn-dynamic-site-acceleration)
