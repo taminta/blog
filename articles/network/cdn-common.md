@@ -12,7 +12,6 @@ tags:
 Azure で提供している CDN サービスのAzure CDN において、ご利用いただける機能やよくあるお問合せ、各 SKU の特徴などを踏まえたトラブル シューティングの手順などをご紹介いたします。<br>
 Azure CDN には現在 4 つの SKU があり、3 つのプロバイダー (Microsoft / Verizon / Akamai) で CDN サービスを提供しております。<br>
 本ブログは Azure CDN における共通的な事項をまとめたブログとなります。<br>
-<br>
 各 SKU に応じた特徴などは以下のブログでまとめておりますのでご参照ください。
 
 *  [Azure CDN の SKU 毎の特徴](https://github.com/taminta/blog/blob/patch-2/articles/network/cdn-specific-sku.md)
