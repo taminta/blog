@@ -1,5 +1,5 @@
 --- 
-title: Azure CDN の各 SKU の特徴、トラブルシューティング手順
+title: Azure CDN の各 SKU の特徴、トラブルシューティングの紹介
 date: 2020-07-08 16:00:00 
 tags: 
   - Network 
@@ -9,13 +9,15 @@ tags:
 
 こんにちは、Azure テクニカル サポート チーム箕輪です。<br>
 <br>
-Azure で提供している CDN サービスのAzure CDN において、ご利用いただける機能やよくあるお問合せ、各 SKU の特徴などを踏まえたトラブル シューティングの手順などをご紹介いたします。<br>
-Azure CDN には現在 4 つの SKU があり、3 つのプロバイダー (Microsoft / Verizon / Akamai) で CDN サービスを提供しております。<br>
+Azure が提供している CDN サービスの Azure CDN において、ご利用いただける機能やよくあるお問合せ、各 SKU の特徴などを踏まえたトラブル シューティングの手順などをご紹介いたします。<br>
+Azure CDN は現在 4 つの SKU があり、3 社の CDN プロバイダー (Microsoft / Verizon / Akamai) で CDN サービスを提供しております。<br>
 本ブログは Azure CDN で提供している 4 つの SKU の特徴や、各 SKU における情報採取手順などをまとめたブログとなります。<br>
-<br>
 Azure CDN における共通的な事項については、以下のブログでまとめておりますのでご参照ください。<br>
 
-*  [Azure CDN の特徴、トラブルシューティング手順](https://github.com/taminta/blog/blob/patch-2/articles/network/cdn-common.md)
+*  [Azure CDN の特徴やよくあるお問い合わせ、トラブル シューティングの紹介](https://github.com/taminta/blog/blob/patch-2/articles/network/cdn-common.md)
+<!---
+  URL はリリース後に要修正。
+-->
 
 <!-- more --> 
 
