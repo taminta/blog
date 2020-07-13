@@ -216,7 +216,7 @@ curl -I  https://www.contoso.com/path/pic.png
 
 (https://www.contoso.com/path/pic.png の箇所は CDN にアクセスする際の URL に変えて実施ください)
 ```
-<br><br>
+<br>
 
 ## Standard Verizon / Premium Verizon においてエラー発生時にご提供いただきたい情報
 Standard Verizon、Premium Verizon は Verizon 社の CDN プラットフォームでサービスを提供しているため、調査は Verizon 社のエンジニアと共同で実施いたします。<br>
