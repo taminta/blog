@@ -1,6 +1,6 @@
 --- 
 title: Azure CDN の特徴やよくあるお問い合わせ、トラブル シューティングの紹介
-date: 2020-07-14 09:00:00 
+date: 2020-07-15 09:00:00 
 tags: 
   - Network 
   - AzureCDN 
