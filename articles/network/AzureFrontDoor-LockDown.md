@@ -68,6 +68,7 @@ IP アドレスでの制御に加えて、この HTTP ヘッダー "X-Azure FDID
 Azure Front Door のリソース ID は、Azure ポータルの Azure Front Door リソースの 概要 にある "フロント ドア ID" から確認できます。
 コマンドであれば、下記のコマンドから "frontdoorId" を確認できます。
 <br>
+
 [Azure PowerShell (Get-AzFrontDoor)](https://docs.microsoft.com/ja-jp/powershell/module/az.frontdoor/get-azfrontdoor?view=azps-5.7.0)
 <br>
 [Azure CLI (az network front-door show)](https://docs.microsoft.com/ja-jp/cli/azure/ext/front-door/network/front-door?view=azure-cli-latest#ext_front_door_az_network_front_door_show)
