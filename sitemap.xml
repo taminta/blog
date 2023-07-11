@@ -30,13 +30,6 @@
   </url>
   
   <url>
-    <loc>https://jpaztech.github.io/blog/vm/vmagent-error/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://jpaztech.github.io/blog/vm/vmagent-notready/</loc>
     
     <lastmod>2023-07-11</lastmod>
@@ -45,6 +38,13 @@
   
   <url>
     <loc>https://jpaztech.github.io/blog/vm/vm-replica-3/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/vm/vmagent-error/</loc>
     
     <lastmod>2023-07-11</lastmod>
     
@@ -121,20 +121,6 @@
   </url>
   
   <url>
-    <loc>https://jpaztech.github.io/blog/vm/runcommand/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jpaztech.github.io/blog/vm/resource-health-alert/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://jpaztech.github.io/blog/vm/resourcegroup-uppercase-lowercase/</loc>
     
     <lastmod>2023-07-11</lastmod>
@@ -149,7 +135,7 @@
   </url>
   
   <url>
-    <loc>https://jpaztech.github.io/blog/vm/re-install-windows-azure-guest-agent/</loc>
+    <loc>https://jpaztech.github.io/blog/vm/runcommand/</loc>
     
     <lastmod>2023-07-11</lastmod>
     
@@ -157,6 +143,20 @@
   
   <url>
     <loc>https://jpaztech.github.io/blog/vm/resource-delete/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/vm/resource-health-alert/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/vm/re-install-windows-azure-guest-agent/</loc>
     
     <lastmod>2023-07-11</lastmod>
     
@@ -198,20 +198,6 @@
   </url>
   
   <url>
-    <loc>https://jpaztech.github.io/blog/vm/linux-expand-os-disk/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jpaztech.github.io/blog/vm/linux-noboot-recovery-managed-disk/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://jpaztech.github.io/blog/vm/linux-time-sync/</loc>
     
     <lastmod>2023-07-11</lastmod>
@@ -227,6 +213,20 @@
   
   <url>
     <loc>https://jpaztech.github.io/blog/vm/migrate_classic_vm_and_storage/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/vm/linux-expand-os-disk/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/vm/linux-noboot-recovery-managed-disk/</loc>
     
     <lastmod>2023-07-11</lastmod>
     
@@ -548,13 +548,6 @@
   </url>
   
   <url>
-    <loc>https://jpaztech.github.io/blog/network/appgw-configchange/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://jpaztech.github.io/blog/network/appgw_change_subnet/</loc>
     
     <lastmod>2023-07-11</lastmod>
@@ -569,7 +562,21 @@
   </url>
   
   <url>
+    <loc>https://jpaztech.github.io/blog/network/appgw-configchange/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jpaztech.github.io/blog/network/appgw-troubleshooting-cert/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/network/ExpressRoutePrefixRollout/</loc>
     
     <lastmod>2023-07-11</lastmod>
     
@@ -632,7 +639,7 @@
   </url>
   
   <url>
-    <loc>https://jpaztech.github.io/blog/network/ExpressRoutePrefixRollout/</loc>
+    <loc>https://jpaztech.github.io/blog/information/How-to-inquiry-to-the-Azure-Support/</loc>
     
     <lastmod>2023-07-11</lastmod>
     
@@ -640,13 +647,6 @@
   
   <url>
     <loc>https://jpaztech.github.io/blog/information/Different-subscriptions-research/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jpaztech.github.io/blog/information/How-to-inquiry-to-the-Azure-Support/</loc>
     
     <lastmod>2023-07-11</lastmod>
     
@@ -786,6 +786,27 @@
   </url>
   
   <url>
+    <loc>https://jpaztech.github.io/blog/archive/powershell-applicationgateway-configuration/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/archive/rca34296489/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/archive/recover_vm_using_nested_hyperv/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jpaztech.github.io/blog/archive/need-azurebox32-ico/</loc>
     
     <lastmod>2023-07-11</lastmod>
@@ -828,70 +849,7 @@
   </url>
   
   <url>
-    <loc>https://jpaztech.github.io/blog/archive/powershell-applicationgateway-configuration/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jpaztech.github.io/blog/archive/rca34296489/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jpaztech.github.io/blog/archive/recover_vm_using_nested_hyperv/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://jpaztech.github.io/blog/archive/monitor-io-throttoling-on-win-vm-arm/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jpaztech.github.io/blog/archive/expressroute-peering-info-portalissue/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jpaztech.github.io/blog/archive/lb_appgw_traffic_different/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jpaztech.github.io/blog/archive/mayupdate_unable-to-rdp/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jpaztech.github.io/blog/archive/migration_arm_to_arm/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jpaztech.github.io/blog/archive/azure-powershell-3-8-0-install/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jpaztech.github.io/blog/archive/azurelb-tips/</loc>
     
     <lastmod>2023-07-11</lastmod>
     
@@ -940,6 +898,34 @@
   </url>
   
   <url>
+    <loc>https://jpaztech.github.io/blog/archive/expressroute-peering-info-portalissue/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/archive/lb_appgw_traffic_different/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/archive/mayupdate_unable-to-rdp/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/archive/migration_arm_to_arm/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jpaztech.github.io/blog/archive/automation-vm-start-deallocate/</loc>
     
     <lastmod>2023-07-11</lastmod>
@@ -961,7 +947,21 @@
   </url>
   
   <url>
-    <loc>https://jpaztech.github.io/blog/archive/applicationgaetway-waf-01/</loc>
+    <loc>https://jpaztech.github.io/blog/archive/azure-powershell-3-8-0-install/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/archive/azurelb-tips/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/archive/automation-vm-auto-deallocate/</loc>
     
     <lastmod>2023-07-11</lastmod>
     
@@ -976,13 +976,6 @@
   
   <url>
     <loc>https://jpaztech.github.io/blog/archive/automation-runbook-webhook/</loc>
-    
-    <lastmod>2023-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jpaztech.github.io/blog/archive/automation-vm-auto-deallocate/</loc>
     
     <lastmod>2023-07-11</lastmod>
     
@@ -1004,6 +997,13 @@
   
   <url>
     <loc>https://jpaztech.github.io/blog/archive/application-gateway-waf-vulnerability-detection/</loc>
+    
+    <lastmod>2023-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jpaztech.github.io/blog/archive/applicationgaetway-waf-01/</loc>
     
     <lastmod>2023-07-11</lastmod>
     
